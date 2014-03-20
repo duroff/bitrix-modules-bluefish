@@ -20,8 +20,7 @@ class bluefish {
 	$request_url = $this->url . $request . "?username=" . $this->username .
                                                "&api_salt=" . $api_salt . 
                                                "&request_timestamp=" . $timestamp .
-                                               "&request_token=" . $hash;
-        die($request_url);
+                                               "&request_token=" . $hash; 
         $requests = file_get_contents($request_url); 
         return json_decode($requests, true); 
     }
@@ -37,8 +36,7 @@ class bluefish {
         return $car;
     }
      
-    public function GetRef($ref) {
-        
+    public function GetRef($ref) { 
         if(!in_array($ref, array('model', 'maker', 'drive', 
                                  'engine', 'engine_vol', 'transmission',
                                  'year', 'body'))) {
