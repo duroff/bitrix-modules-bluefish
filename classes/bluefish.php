@@ -17,7 +17,9 @@ class bluefish {
                                     $this->api_key . 
                                     $api_salt . 
                                     $timestamp, 'FZiQ7hYLeS2kd3w5L9IgFARpy6kUJk4x1vEc');
-	$request_url = $this->url . $request . "?username=" . $this->username .
+        $znak = strpos($request, '?') === false ? '?' : '&';
+	$request_url = $this->url . $request . $znak . 
+                                                "username=" . $this->username .
                                                "&api_salt=" . $api_salt . 
                                                "&request_timestamp=" . $timestamp .
                                                "&request_token=" . $hash; 
@@ -46,5 +48,4 @@ class bluefish {
         return $ref;
     }
 
-    
 }
